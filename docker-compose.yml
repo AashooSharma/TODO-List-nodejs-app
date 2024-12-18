@@ -1,6 +1,10 @@
 version: '3'
 services:
-  todo-app:
-    build: .
+  app:
+    image: node:14
+    container_name: todo-app
     ports:
-      - "3000:3000"
+      - "80:3000" # Map port 80 on host to 3000 inside container
+    volumes:
+      - .:/app
+    command: ["npm", "start"]
