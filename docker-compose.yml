@@ -1,11 +1,6 @@
-version: '3.8'
-
+version: '3'
 services:
   todo-app:
-    image: 65443/my-todo-list-app:v1 # Replace with your actual image
-    container_name: todo-app
+    build: .
     ports:
-      - "3000:3000" # Map container port 3000 to host port 3000
-    environment:
-      NODE_ENV: production # Optional: Set the Node.js environment
-    restart: always # Ensure the app restarts automatically in case of failure
+      - "3000:3000"
